@@ -16,7 +16,7 @@ fn test_cheats_fork_revert() {
             &Filter::new(
                 "testNonExistingContractRevert",
                 ".*",
-                &format!(".*cheats{}Fork", RE_PATH_SEPARATOR),
+                &format!(".*cheats{}fork{}Fork", RE_PATH_SEPARATOR, RE_PATH_SEPARATOR),
             ),
             None,
             TEST_OPTS,
@@ -40,7 +40,7 @@ fn test_cheats_fork() {
     let mut runner = runner();
     let suite_result = runner
         .test(
-            &Filter::new(".*", ".*", &format!(".*cheats{}Fork", RE_PATH_SEPARATOR))
+            &Filter::new(".*", ".*", &format!(".*cheats{}fork{}Fork", RE_PATH_SEPARATOR, RE_PATH_SEPARATOR))
                 .exclude_tests(".*Revert"),
             None,
             TEST_OPTS,
